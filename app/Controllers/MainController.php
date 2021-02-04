@@ -34,6 +34,10 @@ class MainController {
     $this->show('err404');
   }
 
+  function mentionsLegales()
+  {
+    $this->show('home');
+  }
 
 
 

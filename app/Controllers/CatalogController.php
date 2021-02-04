@@ -30,7 +30,32 @@ class CatalogController {
     $this->show('category', $viewData);
   }
 
+  function brand($params)
+  {
+    $viewData = [
+      'brandId' => $params['id']
+    ];
 
+    $this->show('brand', $viewData);
+  }
+
+  function type($params)
+  {
+    $viewData = [
+      'typeId' => $params['id']
+    ];
+
+    $this->show('type', $viewData);
+  }
+
+  function product($params)
+  {
+    $viewData = [
+      'productId' => $params['id']
+    ];
+
+    $this->show('product', $viewData);
+  }
 
 
 

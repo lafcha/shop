@@ -29,6 +29,19 @@ $router->map(
 );
 
 
+// route mentions legales
+$router->map(
+  'GET', // la methode HTTP qui est autorisé
+  '/legal-mentions/', // l'url a laquelle cette route réagit
+  // "target" : ce tableau stocke les noms de la methode
+  // et du controleur qui vont se déclencher pour réagir a cette URL
+  [
+    'controller' => 'MainController',
+    'action' => 'mentionsLegales'
+  ],
+  'mentions-legales' // nom de la route (arbitraire)
+);
+
 
 // route categorie
 $router->map(
@@ -41,6 +54,46 @@ $router->map(
     'action' => 'category'
   ],
   'catalog-category' // nom de la route 
+);
+
+
+// route type
+$router->map(
+  'GET', // la methode HTTP qui est autorisé
+  '/catalogue/type/[i:id]', //! [i:id] nous indique qu'on a une partir dynamique dans l URL
+  // "target" : ce tableau stocke les noms de la methode
+  // et du controleur qui vont se déclencher pour réagir a cette URL
+  [
+    'controller' => 'CatalogController',
+    'action' => 'type'
+  ],
+  'catalog-type' // nom de la route 
+);
+
+// route brand
+$router->map(
+  'GET', // la methode HTTP qui est autorisé
+  '/catalogue/brand/[i:id]', //! [i:id] nous indique qu'on a une partir dynamique dans l URL
+  // "target" : ce tableau stocke les noms de la methode
+  // et du controleur qui vont se déclencher pour réagir a cette URL
+  [
+    'controller' => 'CatalogController',
+    'action' => 'brand'
+  ],
+  'catalog-brand' // nom de la route 
+);
+
+// route product
+$router->map(
+  'GET', // la methode HTTP qui est autorisé
+  '/catalogue/product/[i:id]', //! [i:id] nous indique qu'on a une partir dynamique dans l URL
+  // "target" : ce tableau stocke les noms de la methode
+  // et du controleur qui vont se déclencher pour réagir a cette URL
+  [
+    'controller' => 'CatalogController',
+    'action' => 'product'
+  ],
+  'catalog-product' // nom de la route 
 );
 
 
