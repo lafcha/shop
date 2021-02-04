@@ -20,4 +20,4 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^(.*)$ index.php?page=/$1 [QSA,L]
 
 # Exemple :
-# localhost/mon/site/products => localhost/mon/site/index.php?page=products 
+# localhost/mon/site/products => localhost/mon/site/index.php?page=products

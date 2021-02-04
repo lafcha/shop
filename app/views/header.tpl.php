@@ -7,6 +7,8 @@
   <link rel="stylesheet" href="<?=$assetsFolder?>/css/bootstrap.min.css">
   <link rel="stylesheet" href="<?=$assetsFolder?>/css/font-awesome.min.css">
   <link rel="stylesheet" href="<?=$assetsFolder?>/css/styles.css">
+  
+  
   <title>oShop</title>
 </head>
 
@@ -77,38 +79,39 @@
             <!-- Cart Dropdown-->
             <div class="nav-item dropdown">
               <a href="cart.html" class="navbar-icon-link d-lg-none">
-                  <span class="badge badge-secondary">New</span>
+                <span class="badge badge-secondary">New</span>
               </a>
               <div class="d-none d-lg-block">
-                <a id="cartdetails" data-toggle="dropdown" aria-haspopup="true"
-                aria-expanded="false" href="cart.html" class="navbar-icon-link dropdown-toggle">
-                <i class="fa fa-shopping-cart"></i>
-                <span class="badge badge-secondary">2</span>
+                <a id="cartdetails" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="cart.html"
+                  class="navbar-icon-link dropdown-toggle">
+                  <i class="fa fa-shopping-cart"></i>
+                  <span class="badge badge-secondary">2</span>
                 </a>
                 <div aria-labelledby="cartdetails" class="dropdown-menu dropdown-menu-right p-4">
                   <div class="navbar-cart-product-wrapper">
                     <!-- cart item-->
                     <div class="navbar-cart-product">
-                        
+
                       <div class="w-100">
-                          
-                          <div> <a href="detail.html" class="navbar-cart-product-link">Retro socks</a><small
-                              class="d-block text-muted">Quantité : 1 </small><strong class="d-block text-sm">45 €
-                            </strong></div>
+
+                        <div> <a href="detail.html" class="navbar-cart-product-link">Retro socks</a><small class="d-block text-muted">Quantité
+                            : 1 </small><strong class="d-block text-sm">45 €
+                          </strong></div>
                       </div>
                     </div>
                     <div class="navbar-cart-product">
-                        
+
                       <div class="w-100">
-                          
-                          <div> <a href="detail.html" class="navbar-cart-product-link">Dillinger</a><small
-                              class="d-block text-muted">Quantité : 1 </small><strong class="d-block text-sm">30 €
-                            </strong></div>
+
+                        <div> <a href="detail.html" class="navbar-cart-product-link">Dillinger</a><small class="d-block text-muted">Quantité
+                            : 1 </small><strong class="d-block text-sm">30 €
+                          </strong></div>
                       </div>
                     </div>
-                    
+
                     <!-- total price-->
-                    <div class="navbar-cart-total"><span class="text-uppercase text-muted">Total</span><strong class="text-uppercase">75 €</strong></div>
+                    <div class="navbar-cart-total"><span class="text-uppercase text-muted">Total</span><strong class="text-uppercase">75
+                        €</strong></div>
                     <!-- buttons-->
                     <div class="d-flex justify-content-between">
                       <a href="cart.html" class="btn btn-link text-dark mr-3">Voir le panier <i class="fa-arrow-right fa"></i></a>

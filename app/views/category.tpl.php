@@ -1,0 +1,1 @@
+<h1>template categorie</h1>

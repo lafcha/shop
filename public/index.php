@@ -1,43 +1,68 @@
 <?php
 
-// On lie le fichier MainController
 
 require __DIR__ . '/../app/Controllers/MainController.php';
+require __DIR__ . '/../app/Controllers/CatalogController.php';
 
-// on vérifie que la page existe, si oui, on récupère le nom de la page et on la stocke dans $pageName
-if (isset($_GET['PAGE'])){
-    $pageName = $_GET['page'];
+// on vient réceptioner dans $pageName ce qui se passe dans l'url
+if (isset($_GET['page'])){
+  $pageName = $_GET['page'];
 } 
 else {
-   //sinon, on redirige vers la page d'accueil $pageName = accueil
-   $pageName = '/';
+  $pageName = '/';
 }
 
-// on crée les routes qui vont 
+// ici mes routes ! 
+// J'associe a chaque adresse un controller et une methode
 $route = [
-    '/' => [
-        'controller' => 'MainController',
-        'action' =>'home'
-    ]
+  '/' => [
+    'controller' => 'MainController',
+    'action' => 'home'
+  ],
+
+  '/categorie' => [
+    'controller' => 'CatalogController',
+    'action' => 'category',
+  ]
+
+
 ];
 
 
-// on vérifie que les routes on bien un controller et une méthode associée
-
-if(isset($route[$pageName])){
-    $routeData = $route[$pageName];
-    $controllerToUse = $routeData['controller'];
-    $methodToUse = $routeData['action'];
-
-} 
-// si la page n'est pas trouvée, on utilisera le MainController et la méthode home
-else {
-    $controllerToUse = 'MainController';
-    $methodToUse = 'home';
-
+// début du Dispatcher
+// Ici je verifie que la page demandée existe bien dans 
+// mon tableau de routes
+if(isset($route[$pageName])) {
+  // je récupère les infos (nom de controller et methode) 
+  // de la route demandée
+  $routeData = $route[$pageName];
+  // ici je reçoit le nom du controller a utiliser
+  $controllerToUse = $routeData['controller'];
+  // ici le nom de la methode a utiliser
+  $methodToUse = $routeData['action'];
+} else {
+  // et si la route n'existe pas 
+  // on va afficher ma page d'accueil(grace a la methode home du controller MainController)
+  $controllerToUse = 'MainController';
+  $methodToUse = 'pageNotFoundAction';
 }
 
-// on instancie un nouveau controller, on utiliser pour ça le controller indiqué dans $controllerToUse
+// J'instancie dynamiquement le contrôleur a utiliser 
+/*
+Donc si je suis sur ma page d'accueil : 
+$routeData est égal a [
+    'controller' => 'MainController',
+    'action' => 'home'
+  ]
+$controllerToUse est égal à 'MainController'
+$methodToUse est égal a 'home'
+
+DONC POUR LES LIGNES CI DESSOUS ON A :
+
+$controller = new MainController();
+$controller->home(); 
+
+*/
+
 $controller = new $controllerToUse();
-// on utilise la méthode indiquée dans $methodToUse 
 $controller->$methodToUse();
