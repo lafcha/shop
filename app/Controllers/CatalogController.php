@@ -17,10 +17,17 @@ class CatalogController {
   }
     
   
-  
-  function category()
+  // ici la methode category va recevoir $match['params']
+  // qui contient un tableau associatif avec une seule entrée : 
+  // 'id' => idDetectéDansUrl
+   
+  function category($params)
   {
-    $this->show('category');
+    $viewData = [
+      'categoryId' => $params['id']
+    ];
+
+    $this->show('category', $viewData);
   }
 
 
