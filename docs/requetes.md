@@ -97,3 +97,25 @@ FROM `brand`
 WHERE `footer_order`>"0"
 ORDER BY `footer_order`
 ```
+
+____
+
+## MEGA BONUS
+
+### Bonus :spades: : Récupérer le nom & le prix des produits de la catégorie dont l'ID est 1 + le nom de la catégorie en question.
+
+```sql
+SELECT product.name, product.price, category.name, category.id
+FROM product
+LEFT JOIN category ON product.category_id = category.id
+WHERE category.id = 1
+```
+
+## Bonus :skull: :Récupérer le nombre de produits pour chaque catégorie.
+
+```sql
+SELECT COUNT(product.id) AS nb, category.id, category.name
+FROM product
+INNER JOIN category ON category_id = category.id
+GROUP BY category_id
+```
