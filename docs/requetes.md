@@ -1,6 +1,6 @@
 # SQL Queries
 
-## Getting all products
+## Getting all the products
 
 ```sql
 SELECT * FROM `product`
@@ -12,6 +12,48 @@ SELECT * FROM `product`
 SELECT *
 FROM `product`
 WHERE `id` = 2
+```
+
+## Getting all the categories
+
+```sql
+SELECT * FROM `category`
+```
+
+## Getting all categories with a specified id (#2)
+
+```sql
+SELECT *
+FROM `category`
+WHERE `id` = 2
+```
+
+## Getting all the brands
+
+```sql
+SELECT * FROM `brand`
+```
+
+## Getting all brands with a specified id (#2)
+
+```sql
+SELECT *
+FROM `brand`
+WHERE `id` = 2
+```
+
+## Getting all the types
+
+```sql
+SELECT * FROM `type`
+```
+
+## Getting all types with a specified id (#2)
+
+```sql
+SELECT *
+FROM `type`
+WHERE  `id` = 2
 ```
 
 ## Sorting the products by price
