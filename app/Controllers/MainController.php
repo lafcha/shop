@@ -37,7 +37,10 @@ class MainController {
     $this->show('mentions');
   }
 
-
+  function test()
+  {
+    $this->show('test');
+  }
 
 
 

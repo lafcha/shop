@@ -113,7 +113,18 @@ $router->map(
   'catalog-product' // nom de la route 
 );
 
-
+// route Test
+$router->map(
+  'GET', // la methode HTTP qui est autorisé
+  '/test', // l'url a laquelle cette route réagit
+  // "target" : ce tableau stocke les noms de la methode
+  // et du controleur qui vont se déclencher pour réagir a cette URL
+  [
+    'controller' => 'MainController',
+    'action' => 'test'
+  ],
+  'test' // nom de la route (arbitraire)
+);
 
 
 
