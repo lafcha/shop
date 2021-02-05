@@ -34,7 +34,7 @@ class Brand {
   }
 
     /**
-     * Récupérer toutes une entrée selon un Id défini
+     * Récupérer une marque selon un Id défini
     *
     * @return $results
     */
@@ -85,7 +85,7 @@ class Brand {
     /**
      * Get the value of footer_order
      */ 
-    public function getFooter_order()
+    public function getFooterOrder()
     {
         return $this->footer_order;
     }
@@ -95,7 +95,7 @@ class Brand {
      *
      * @return  self
      */ 
-    public function setFooter_order($footer_order)
+    public function setFooterOrder($footer_order)
     {
         $this->footer_order = $footer_order;
 
@@ -105,7 +105,7 @@ class Brand {
     /**
      * Get the value of created_at
      */ 
-    public function getCreated_at()
+    public function getCreatedAt()
     {
         return $this->created_at;
     }
@@ -115,7 +115,7 @@ class Brand {
      *
      * @return  self
      */ 
-    public function setCreated_at($created_at)
+    public function setCreatedAt($created_at)
     {
         $this->created_at = $created_at;
 
@@ -125,7 +125,7 @@ class Brand {
     /**
      * Get the value of updated_at
      */ 
-    public function getUpdated_at()
+    public function getUpdatedAt()
     {
         return $this->updated_at;
     }
@@ -135,7 +135,7 @@ class Brand {
      *
      * @return  self
      */ 
-    public function setUpdated_at($updated_at)
+    public function setUpdatedAt($updated_at)
     {
         $this->updated_at = $updated_at;
 

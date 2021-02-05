@@ -12,7 +12,48 @@ class Type {
 
      /*********** Méthodes ************/
 
-      /*********** Getters & Setters ************/
+     /**
+      * Récupérer toutes les entrées de la table Brand
+      *
+      * @return $results
+      */
+  public function findAll()
+  {
+    // j'ecris la requete 
+    $sql = '
+      SELECT * FROM `type`
+    ';
+
+    $pdo = Database::getPDO();
+
+    $pdoStatement = $pdo->query($sql);
+
+    $results = $pdoStatement->fetchAll(PDO::FETCH_CLASS, 'Type');
+
+    return $results;
+  }
+
+    /**
+     * Récupérer une marque selon un Id défini
+    *
+    * @return $results
+    */
+
+  public function find($id)
+  {
+    $sql = '
+      SELECT * 
+      FROM `type`
+      WHERE `id` = ' . $id ;
+    $pdo = Database::getPDO();
+    $pdoStatement = $pdo->query($sql);
+    // petite nouveauté, je peux faire un fetchObject plutot qu'un fetch
+    // Pour récuperer mes donn'es sou la forme d'UN objet qui sera instancie a partir de la classe 'Category'
+    $result = $pdoStatement->fetchObject('Type');
+    return $result;
+  }
+  
+/*********** Getters & Setters ************/
 
     /**
      * Get the value of id
@@ -45,7 +86,7 @@ class Type {
     /**
      * Get the value of footer_order
      */ 
-    public function getFooter_order()
+    public function getFooterOrder()
     {
         return $this->footer_order;
     }
@@ -55,7 +96,7 @@ class Type {
      *
      * @return  self
      */ 
-    public function setFooter_order($footer_order)
+    public function setFooterOrder($footer_order)
     {
         $this->footer_order = $footer_order;
 
@@ -65,7 +106,7 @@ class Type {
     /**
      * Get the value of created_at
      */ 
-    public function getCreated_at()
+    public function getCreatedAt()
     {
         return $this->created_at;
     }
@@ -75,7 +116,7 @@ class Type {
      *
      * @return  self
      */ 
-    public function setCreated_at($created_at)
+    public function setCreatedAt($created_at)
     {
         $this->created_at = $created_at;
 
@@ -85,7 +126,7 @@ class Type {
     /**
      * Get the value of updated_at
      */ 
-    public function getUpdated_at()
+    public function getUpdatedAt()
     {
         return $this->updated_at;
     }
@@ -95,7 +136,7 @@ class Type {
      *
      * @return  self
      */ 
-    public function setUpdated_at($updated_at)
+    public function setUpdatedAt($updated_at)
     {
         $this->updated_at = $updated_at;
 

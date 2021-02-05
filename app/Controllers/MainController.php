@@ -52,12 +52,11 @@ class MainController {
     $oneBrand = $brandModel->find(2);
 
 
-    //$typeModel = new Type();
-    //$allTypes = $typeModel->findAll();
+    $typeModel = new Type();
+    $allTypes = $typeModel->findAll();
 
-    //$typeModel = new Type();
-    //$allTypes = $typeModel->find($params['id']);
-
+    $typeModel = new Type();
+    $oneType = $typeModel->find(2);
 
     $this->show('test');
   }
