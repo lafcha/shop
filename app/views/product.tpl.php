@@ -1,1 +1,1 @@
-<h1>Categorie Numero :  <?= $viewData['productId']?></h1>
+<h1>Produit <?= $viewData['productId'] ?></h1>

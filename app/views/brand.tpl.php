@@ -1,1 +1,1 @@
-<h1>Categorie Numero :  <?= $viewData['brandId']?></h1>
+<h1>Marque <?= $viewData['brandId'] ?></h1>
