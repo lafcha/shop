@@ -35,7 +35,6 @@ class Category{
     return $results;
   }
 
-
   public function find($id)
   {
     $sql = '
@@ -49,8 +48,6 @@ class Category{
     $result = $pdoStatement->fetchObject('Category');
     return $result;
   }
-
-
 
 
 

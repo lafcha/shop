@@ -12,6 +12,46 @@ class Brand {
 
      /*********** Méthodes ************/
 
+     /**
+      * Récupérer toutes les entrées de la table Brand
+      *
+      * @return $results
+      */
+  public function findAll()
+  {
+    // j'ecris la requete 
+    $sql = '
+      SELECT * FROM `brand`
+    ';
+
+    $pdo = Database::getPDO();
+
+    $pdoStatement = $pdo->query($sql);
+
+    $results = $pdoStatement->fetchAll(PDO::FETCH_CLASS, 'Brand');
+
+    return $results;
+  }
+
+    /**
+     * Récupérer toutes une entrée selon un Id défini
+    *
+    * @return $results
+    */
+
+  public function find($id)
+  {
+    $sql = '
+      SELECT * 
+      FROM `brand`
+      WHERE `id` = ' . $id ;
+    $pdo = Database::getPDO();
+    $pdoStatement = $pdo->query($sql);
+    // petite nouveauté, je peux faire un fetchObject plutot qu'un fetch
+    // Pour récuperer mes donn'es sou la forme d'UN objet qui sera instancie a partir de la classe 'Category'
+    $result = $pdoStatement->fetchObject('Brand');
+    return $result;
+  }
       /*********** Getters & Setters ************/
 
     /**
