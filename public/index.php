@@ -39,7 +39,7 @@ $router->map(
     'controller' => 'MainController',
     'action' => 'mentionsLegales'
   ],
-  'mentions-legales' // nom de la route (arbitraire)
+  'legal-mentions' // nom de la route (arbitraire)
 );
 
 

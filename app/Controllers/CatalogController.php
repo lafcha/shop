@@ -57,8 +57,4 @@ class CatalogController {
     $this->show('product', $viewData);
   }
 
-
-
-
-
 }
