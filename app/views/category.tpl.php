@@ -5,9 +5,6 @@
 
 
 ?>
-
-
-
   <section class="hero">
     <div class="container">
       <!-- Breadcrumbs -->
@@ -67,8 +64,6 @@
             </div>
           </div>
         <?php endforeach;?>
-
-
       </div>
       
     </div>

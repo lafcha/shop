@@ -21,14 +21,24 @@ class Product {
 
   }
 
-
-
   public function findAllByCategory($categoryId)
   {
     $sql = '
       SELECT * 
       FROM `product`
      WHERE category_id=' . $categoryId;
+    $pdo = Database::getPDO();
+    $pdoStatement = $pdo->query($sql);
+    $results = $pdoStatement->fetchAll(PDO::FETCH_CLASS, 'Product');
+    return $results;
+  }
+
+  public function findAllByType($typeId)
+  {
+    $sql = '
+      SELECT * 
+      FROM `product`
+     WHERE type_id=' . $typeId;
     $pdo = Database::getPDO();
     $pdoStatement = $pdo->query($sql);
     $results = $pdoStatement->fetchAll(PDO::FETCH_CLASS, 'Product');

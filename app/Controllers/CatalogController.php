@@ -50,16 +50,30 @@ class CatalogController {
   }
 
 
-
-
   function type($params)
   {
+    $typeModel = new Type();
+    $oneType = $typeModel->find($params['id']);
+
+    $categoryModel = new Category();
+    $category = $categoryModel->find($params['id']);
+  
+    // Aller chercher les produits qui ont pour type_id $params['id']
+    $productModel = new Product();
+    $products = $productModel->findAllByType($params['id']);
+
+
+
+    // ici plutot que d'avoir un id => l'id Detecté
+    // je préfère avoir un 'catgegoryId' pour etre plus précis
     $viewData = [
-      'typeId' => $params['id']
+      'typeId' => $params['id'],
+      'type' => $oneType,
+      'products' => $products,
+      'category' => $category
     ];
     $this->show('type', $viewData);
   }
-
 
 
   function brand($params)

@@ -3,6 +3,8 @@ require __DIR__ . '/../app/Controllers/MainController.php';
 require __DIR__ . '/../app/Controllers/CatalogController.php';
 
 require __DIR__ . '/../app/Models/Product.php';
+require __DIR__ . '/../app/Models/Brand.php';
+require __DIR__ . '/../app/Models/Type.php';
 require __DIR__ . '/../app/Models/Category.php';
 require __DIR__ . '/../app/Utils/Database.php';
 
