@@ -4,10 +4,13 @@ class CoreController {
 
     protected function show($viewName, $viewData = [])
     {
-  
+      global $router;
   
       $brandModel = new Brand();
       $footerFiveBrands = $brandModel->findFooterFive();
+
+      $typeModel = new Type();
+      $footerFiveType = $typeModel->footerFiveType();
   
   
       $viewData['curentPage'] = $viewName;

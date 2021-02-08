@@ -63,7 +63,7 @@ class Product extends CoreModel {
     WHERE  product.name=' . $name;
     $pdo = Database::getPDO();
     $pdoStatement = $pdo->query($sql);
-    $results = $pdoStatement->fetch(PDO::FETCH_OBJ, 'Product');
+    $results = $pdoStatement->fetchObject(PDO::FETCH_OBJ, 'Product');
     return $results;
   }
 

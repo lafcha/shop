@@ -51,6 +51,21 @@ class Type extends CoreModel {
     return $result;
   }
   
+
+  public function footerFiveType(){
+    $pdo = Database::getPDO();
+    $sql = '
+      SELECT * 
+      FROM `type`
+      WHERE `footer_order` > 0
+      ORDER BY `footer_order`
+      LIMIT 5
+    ';
+    $pdoStatement = $pdo->query($sql);
+    $results = $pdoStatement->fetchAll(PDO::FETCH_CLASS, 'Type');
+    return $results;
+  }
+
 /*********** Getters & Setters ************/
 
     /**

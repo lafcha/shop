@@ -63,6 +63,7 @@ class Brand extends CoreModel {
     $results = $pdoStatement->fetchAll(PDO::FETCH_CLASS, 'Brand');
     return $results;
   }
+  
       /*********** Getters & Setters ************/
 
      /**
