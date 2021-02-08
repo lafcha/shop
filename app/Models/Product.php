@@ -1,16 +1,13 @@
 <?php 
 
 
-class Product {
-  private $id;
+class Product extends CoreModel {
   private $name;
   private $description;
   private $picture;
   private $price;
   private $rate;
   private $status;
-  private $created_at;
-  private $updated_at;
   private $brand_id;
   private $category_id;
   private $type_id;
@@ -190,46 +187,7 @@ class Product {
     return $this;
   }
 
-  /**
-   * Get the value of created_at
-   */ 
-  public function getCreatedAt()
-  {
-    return $this->created_at;
-  }
-
-  /**
-   * Set the value of created_at
-   *
-   * @return  self
-   */ 
-  public function setCreatedAt($created_at)
-  {
-    $this->created_at = $created_at;
-
-    return $this;
-  }
-
-  /**
-   * Get the value of updated_at
-   */ 
-  public function getUpdatedAt()
-  {
-    return $this->updated_at;
-  }
-
-  /**
-   * Set the value of updated_at
-   *
-   * @return  self
-   */ 
-  public function setUpdatedAt($updated_at)
-  {
-    $this->updated_at = $updated_at;
-
-    return $this;
-  }
-
+  
   /**
    * Get the value of brand_id
    */ 
@@ -290,11 +248,4 @@ class Product {
     return $this;
   }
 
-  /**
-   * Get the value of id
-   */ 
-  public function getId()
-  {
-    return $this->id;
-  }
 }

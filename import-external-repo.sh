@@ -14,6 +14,7 @@ if [ $# -eq 0 ] || [ $# -eq 1 ]
 then
     echo " "
     echo "Usage: sh import-external-repo.sh git@github.com:O-clock-XXXXX/repository-name.git branch-name-to-create [branch-name-source]"
+sh import-external-repo.sh git@github.com:O-clock-XXXXX/repository-name.git branch-name-to-create [branch-name-source]
     echo " "
     exit 0
 fi
