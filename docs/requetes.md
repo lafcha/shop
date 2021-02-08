@@ -87,6 +87,7 @@ SELECT *
 FROM `type`
 WHERE `footer_order`>"0"
 ORDER BY `footer_order`
+LIMIT 5
 ```
 
 ## Getting all the brands displayed in the footer
@@ -96,6 +97,7 @@ SELECT *
 FROM `brand`
 WHERE `footer_order`>"0"
 ORDER BY `footer_order`
+LIMIT 5
 ```
 
 ____

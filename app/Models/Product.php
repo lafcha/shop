@@ -46,6 +46,29 @@ class Product {
   }
 
 
+  public function findAllByBrand($brandId)
+  {
+    $sql = '
+      SELECT * 
+      FROM `product`
+     WHERE type_id=' . $brandId;
+    $pdo = Database::getPDO();
+    $pdoStatement = $pdo->query($sql);
+    $results = $pdoStatement->fetchAll(PDO::FETCH_CLASS, 'Product');
+    return $results;
+  }
+
+  public function FindProductBrand ($name){
+    $sql = '
+    SELECT brand.name AS brand_name,brand.id, product.name AS product_name
+    FROM brand
+    INNER JOIN product ON  brand.id= product.brand_id
+    WHERE  product.name=' . $name;
+    $pdo = Database::getPDO();
+    $pdoStatement = $pdo->query($sql);
+    $results = $pdoStatement->fetch(PDO::FETCH_OBJ, 'Product');
+    return $results;
+  }
 
   /**
    * Get the value of name

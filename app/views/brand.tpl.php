@@ -1,5 +1,3 @@
-<h1>Marque <?= $viewData['brandId'] ?></h1>
-
 <?php 
 
 //dump($viewData['products']);
@@ -7,19 +5,16 @@
 
 
 ?>
-
-
-
   <section class="hero">
     <div class="container">
       <!-- Breadcrumbs -->
       <ol class="breadcrumb justify-content-center">
         <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-        <li class="breadcrumb-item active"><?= $viewData['category']->getName();?></li>
+        <li class="breadcrumb-item active"><?= $viewData['brand']->getName();?></li>
       </ol>
       <!-- Hero Content-->
       <div class="hero-content pb-5 text-center">
-        <h1 class="hero-heading"> <?= $viewData['category']->getName() ?></h1>
+        <h1 class="hero-heading"> <?= $viewData['brand']->getName() ?></h1>
         <div class="row">
           <div class="col-xl-8 offset-xl-2">
             <p class="lead text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
@@ -69,8 +64,6 @@
             </div>
           </div>
         <?php endforeach;?>
-
-
       </div>
       
     </div>

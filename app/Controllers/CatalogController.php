@@ -54,9 +54,6 @@ class CatalogController {
   {
     $typeModel = new Type();
     $oneType = $typeModel->find($params['id']);
-
-    $categoryModel = new Category();
-    $category = $categoryModel->find($params['id']);
   
     // Aller chercher les produits qui ont pour type_id $params['id']
     $productModel = new Product();
@@ -70,7 +67,6 @@ class CatalogController {
       'typeId' => $params['id'],
       'type' => $oneType,
       'products' => $products,
-      'category' => $category
     ];
     $this->show('type', $viewData);
   }
@@ -78,8 +74,21 @@ class CatalogController {
 
   function brand($params)
   {
+    $brandModel = new Brand();
+    $oneBrand = $brandModel->find($params['id']);
+
+    // Aller chercher les produits qui ont pour type_id $params['id']
+    $productModel = new Product();
+    $products = $productModel->findAllByBRand($params['id']);
+
+
+
+    // ici plutot que d'avoir un id => l'id Detecté
+    // je préfère avoir un 'catgegoryId' pour etre plus précis
     $viewData = [
-      'brandId' => $params['id']
+      'brandId' => $params['id'],
+      'brand' => $oneBrand,
+      'products' => $products,
     ];
     $this->show('brand', $viewData);
   }
