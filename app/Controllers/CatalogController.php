@@ -4,6 +4,16 @@ class CatalogController {
 
   function show($viewName, $viewData = [])
   {
+    global $router;
+    // Etant donné que toute les methodes de mon Controleur
+    // font appel a la methode show.
+    // Et etant donné qu'on a besoin des infos de la table brand
+    // dans le footer de toute les pages,
+    // je vais directement faire appel a mon model dans la methode
+    // show ! 
+    $brandModel = new Brand();
+    $footerFiveBrands = $brandModel->findFooterFive();
+
     $viewData['curentPage'] = $viewName;
     // la superglobale $_SERVER donne un tableau associatif avec de nombreuses informations
     // l'entée "BASE_URI" permet d'avoir le chemin en absolu de la racine de mon projet
