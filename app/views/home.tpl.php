@@ -46,8 +46,8 @@
                 alt="Card image" class="card-img">
               <div class="card-img-overlay d-flex align-items-center">
                 <div class="w-100">
-                  <h2 class="display-4 mb-4">Détente</h2>
-                  <a href="category.html" class="btn btn-link text-dark">Se faire plaisir
+                  <h2 class="display-4 mb-4"><?= $viewData['categories'][3]->getName()?></h2>
+                  <a href="<?= $router->generate('catalog-category', ['id' => $viewData['categories'][3]->getId()]) ?>" class="btn btn-link text-dark">Se faire plaisir
                     <i class="fa-arrow-right fa ml-2"></i>
                   </a>
                 </div>
