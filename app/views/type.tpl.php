@@ -53,7 +53,7 @@
         <?php foreach($viewData['products'] as $currentProduct):?>
           <div class="product col-xl-3 col-lg-4 col-sm-6">
             <div class="product-image">
-              <a href="detail.html" class="product-hover-overlay-link">
+              <a href="<?= $router->generate('catalog-product',['id' => $currentProduct->getId()]) ?>" class="product-hover-overlay-link">
                 <img src="<?= $baseUri ?><?= $currentProduct->getPicture()?>" alt="product" class="img-fluid">
               </a>
             </div>
@@ -62,7 +62,7 @@
               <a href="<?= $router->generate('catalog-product',['id' => $currentProduct->getId()]) ?>" class="btn btn-dark btn-buy"><i class="fa-search fa"></i><span class="btn-buy-label ml-2">Voir</span></a>
             </div>
             <div class="py-2">
-              <p class="text-muted text-sm mb-1">Chaussons</p>
+              <p class="text-muted text-sm mb-1"><?php echo $viewData['type']->getName()?></p>
               <h3 class="h6 text-uppercase mb-1"><a href="detail.html" class="text-dark"><?= $currentProduct->getName()?></a></h3><span class="text-muted"><?= $currentProduct->getPrice()?>€</span>
             </div>
           </div>

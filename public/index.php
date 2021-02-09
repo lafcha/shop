@@ -16,6 +16,8 @@ require __DIR__ . '/../app/Utils/Database.php';
 require __DIR__ . '/../vendor/autoload.php';
 
 
+use Oshop\Controllers\MainController;
+
 //! ATTENTION SUPER IMPORTANT
 //! QUAND J'UTILISE ALTOROUTER 
 //! J'AI L'INTERDICTION FORMELLE
