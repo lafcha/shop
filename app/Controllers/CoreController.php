@@ -2,6 +2,12 @@
 
 class CoreController {
 
+  /**
+   * Méthode permettant d'afficher un rendu HTML 
+   * @param [type] $viewName
+   * @param array $viewData
+   * @return void
+   */
     protected function show($viewName, $viewData = [])
     {
       global $router;
@@ -10,7 +16,7 @@ class CoreController {
       $footerFiveBrands = $brandModel->findFooterFive();
 
       $typeModel = new Type();
-      $footerFiveType = $typeModel->footerFiveType();
+      $footerFiveType = $typeModel->findFooterFive();
   
   
       $viewData['curentPage'] = $viewName;
@@ -20,7 +26,7 @@ class CoreController {
      
       // on pourra donc l'appeler dans toute nos vues sans que cela dépende de là ou on se place.
   
-  
+      $baseUri = $_SERVER['BASE_URI'] . "/";
       $assetsFolder = $_SERVER['BASE_URI'] . '/assets';
       //  var_dump($assetsFolder);die();
       require __DIR__ . '/../views/header.tpl.php';

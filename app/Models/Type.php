@@ -52,7 +52,7 @@ class Type extends CoreModel {
   }
   
 
-  public function footerFiveType(){
+  public function findFooterFive(){
     $pdo = Database::getPDO();
     $sql = '
       SELECT * 

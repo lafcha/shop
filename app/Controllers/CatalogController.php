@@ -79,6 +79,7 @@ class CatalogController extends CoreController {
 
 
   function product($params){
+
     $viewData = [
       'productId' => $params['id']
     ];
