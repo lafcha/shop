@@ -6,6 +6,7 @@ use Oshop\Models\Category;
 use Oshop\Utils\Database;
 use Oshop\Models\Type;
 use Oshop\Models\Product;
+use Oshop\Models\Brand;
 
 class CatalogController extends CoreController {
 

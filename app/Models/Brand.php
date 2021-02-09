@@ -51,7 +51,7 @@ class Brand extends CoreModel {
     $pdoStatement = $pdo->query($sql);
     // petite nouveauté, je peux faire un fetchObject plutot qu'un fetch
     // Pour récuperer mes donn'es sou la forme d'UN objet qui sera instancie a partir de la classe 'Category'
-    $result = $pdoStatement->fetchObject('Brand');
+    $result = $pdoStatement->fetchObject(self::class);
     return $result;
   }
 
