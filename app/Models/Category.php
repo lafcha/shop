@@ -51,7 +51,20 @@ class Category extends CoreModel{
     return $result;
   }
 
-
+  public function findHomeFive(){
+    $pdo = Database::getPDO();
+    $sql = '
+      SELECT * 
+      FROM `category`
+      WHERE `home_order` > 0
+      ORDER BY `home_order`
+      LIMIT 5
+    ';
+    $pdoStatement = $pdo->query($sql);
+    // J'utilise self::class au lieu d'utiliser 'Oshop\Models\brands' pour qu'il retrouve le chemin. Il saura que l'on utilise la classe en cours.
+    $results = $pdoStatement->fetchAll(PDO::FETCH_CLASS, self::class);
+    return $results;
+  }
 
   /**
    * Get the value of name

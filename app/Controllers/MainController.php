@@ -8,9 +8,20 @@ class MainController extends CoreController {
 
   function home()
   {
-    $this->show('home');
-  }
 
+    $categoryModel = new Category;
+    $categoriesInHome = $categoryModel->findHomeFive();
+
+    $viewData = [
+      'categories' => $categoriesInHome,
+    ];
+
+    extract($viewData);
+
+    //dump($viewData);die();
+    $this->show('home', $viewData);
+
+  }
 
   function pageNotFoundAction()
   {

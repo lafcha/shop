@@ -47,7 +47,7 @@
       <div class="row">
         <!-- product-->
 
-        <?php foreach($viewData['products'] as $currentProduct):?>
+        <?php foreach($products as $currentProduct):?>
           <div class="product col-xl-3 col-lg-4 col-sm-6">
             <div class="product-image">
               <a href="detail.html" class="product-hover-overlay-link">
