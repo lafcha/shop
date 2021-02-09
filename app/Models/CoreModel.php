@@ -1,5 +1,10 @@
 <?php
 
+namespace Oshop\Models;
+
+use Oshop\Utils\Database;
+use PDO;
+
 // Model de base : c'est une classe-mère dont vont hériter tous les models
 // Cette classe n'est pas destinée à être instanciée, mais simplement à être héritée (on dit également étendue)
 

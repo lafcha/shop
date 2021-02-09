@@ -1,5 +1,10 @@
 <?php
 
+namespace Oshop\Models;
+
+use Oshop\Utils\Database;
+use PDO;
+
 class Category extends CoreModel{
   // On va représenter toute nos colonnes 
   // sous la forme de propriétés 
@@ -28,7 +33,7 @@ class Category extends CoreModel{
     //! ATTENTION ICI on ne fait plus PDO::FETCH_ASSOC mais PDO::FETCH_CLASS
     //! On va donc recevoir un tableau indexé à partir de 0
     //! qui contient une liste l'objet instanciés à partir de la classe Category
-    $results = $pdoStatement->fetchAll(PDO::FETCH_CLASS, 'Category');
+    $results = $pdoStatement->fetchAll(PDO::FETCH_CLASS, self::class);
     return $results;
   }
 
@@ -42,7 +47,7 @@ class Category extends CoreModel{
     $pdoStatement = $pdo->query($sql);
     // petite nouveauté, je peux faire un fetchObject plutot qu'un fetch
     // Pour récuperer mes donn'es sou la forme d'UN objet qui sera instancie a partir de la classe 'Category'
-    $result = $pdoStatement->fetchObject('Category');
+    $result = $pdoStatement->fetchObject(self::class);
     return $result;
   }
 

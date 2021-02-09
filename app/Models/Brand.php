@@ -1,5 +1,10 @@
 <?php
 
+namespace Oshop\Models;
+
+use Oshop\Utils\Database;
+use PDO;
+
 class Brand extends CoreModel {
 
     /*********** Propriétés ************/
@@ -25,7 +30,7 @@ class Brand extends CoreModel {
 
     $pdoStatement = $pdo->query($sql);
 
-    $results = $pdoStatement->fetchAll(PDO::FETCH_CLASS, 'Brand');
+    $results = $pdoStatement->fetchAll(PDO::FETCH_CLASS, self::class);
 
     return $results;
   }
@@ -60,7 +65,8 @@ class Brand extends CoreModel {
       LIMIT 5
     ';
     $pdoStatement = $pdo->query($sql);
-    $results = $pdoStatement->fetchAll(PDO::FETCH_CLASS, 'Brand');
+    // J'utilise self::class au lieu d'utiliser 'Oshop\Models\brands' pour qu'il retrouve le chemin. Il saura que l'on utilise la classe en cours.
+    $results = $pdoStatement->fetchAll(PDO::FETCH_CLASS, self::class);
     return $results;
   }
   

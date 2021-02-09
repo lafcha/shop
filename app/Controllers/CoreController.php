@@ -1,5 +1,10 @@
 <?php
 
+namespace Oshop\Controllers;
+use Oshop\Models\Brand;
+use Oshop\Models\Type;
+
+
 class CoreController {
 
   /**

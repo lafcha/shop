@@ -1,5 +1,9 @@
 <?php 
 
+namespace Oshop\Models;
+
+use Oshop\Utils\Database;
+use PDO;
 
 class Product extends CoreModel {
   private $name;
@@ -26,7 +30,7 @@ class Product extends CoreModel {
      WHERE category_id=' . $categoryId;
     $pdo = Database::getPDO();
     $pdoStatement = $pdo->query($sql);
-    $results = $pdoStatement->fetchAll(PDO::FETCH_CLASS, 'Product');
+    $results = $pdoStatement->fetchAll(PDO::FETCH_CLASS, self::class);
     return $results;
   }
 
@@ -38,7 +42,7 @@ class Product extends CoreModel {
      WHERE type_id=' . $typeId;
     $pdo = Database::getPDO();
     $pdoStatement = $pdo->query($sql);
-    $results = $pdoStatement->fetchAll(PDO::FETCH_CLASS, 'Product');
+    $results = $pdoStatement->fetchAll(PDO::FETCH_CLASS, self::class);
     return $results;
   }
 
@@ -51,7 +55,7 @@ class Product extends CoreModel {
      WHERE type_id=' . $brandId;
     $pdo = Database::getPDO();
     $pdoStatement = $pdo->query($sql);
-    $results = $pdoStatement->fetchAll(PDO::FETCH_CLASS, 'Product');
+    $results = $pdoStatement->fetchAll(PDO::FETCH_CLASS, self::class);
     return $results;
   }
 
@@ -63,7 +67,7 @@ class Product extends CoreModel {
     WHERE  product.name=' . $name;
     $pdo = Database::getPDO();
     $pdoStatement = $pdo->query($sql);
-    $results = $pdoStatement->fetchObject(PDO::FETCH_OBJ, 'Product');
+    $results = $pdoStatement->fetchObject(PDO::FETCH_OBJ, self::class);
     return $results;
   }
 

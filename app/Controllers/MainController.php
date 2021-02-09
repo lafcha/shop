@@ -1,5 +1,9 @@
 <?php
 
+namespace Oshop\Controllers;
+
+use Oshop\Models\Category;
+
 class MainController extends CoreController {
 
   function home()

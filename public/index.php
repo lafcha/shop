@@ -1,4 +1,5 @@
 <?php
+/*
 require __DIR__ . '/../app/Controllers/CoreController.php';
 require __DIR__ . '/../app/Controllers/MainController.php';
 require __DIR__ . '/../app/Controllers/CatalogController.php';
@@ -9,6 +10,7 @@ require __DIR__ . '/../app/Models/Brand.php';
 require __DIR__ . '/../app/Models/Type.php';
 require __DIR__ . '/../app/Models/Category.php';
 require __DIR__ . '/../app/Utils/Database.php';
+*/
 
 //! inclure les dépendances composer
 require __DIR__ . '/../vendor/autoload.php';
@@ -150,7 +152,7 @@ if($match !== false){
   //$match qui contient toutes les infos de la route si la route existe !
   $routeData = $match['target'];
   // ici je sors le nom du controleur
-  $constrollerToUse = $routeData['controller'];
+  $constrollerToUse = '\Oshop\Controllers\\' . $routeData['controller'];
   // et le nom de la methode a utiliser
   $methodToUse = $routeData['action'];
 

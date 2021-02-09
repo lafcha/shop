@@ -1,5 +1,12 @@
 <?php
 
+namespace Oshop\Controllers;
+
+use Oshop\Models\Category;
+use Oshop\Utils\Database;
+use Oshop\Models\Type;
+use Oshop\Models\Product;
+
 class CatalogController extends CoreController {
 
     // ici la methode category va recevoir $match['params']

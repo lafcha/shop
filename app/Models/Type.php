@@ -1,5 +1,10 @@
 <?php
 
+namespace Oshop\Models;
+
+use Oshop\Utils\Database;
+use PDO;
+
 class Type extends CoreModel {
 
     /*********** Propriétés ************/
@@ -26,7 +31,7 @@ class Type extends CoreModel {
 
     $pdoStatement = $pdo->query($sql);
 
-    $results = $pdoStatement->fetchAll(PDO::FETCH_CLASS, 'Type');
+    $results = $pdoStatement->fetchAll(PDO::FETCH_CLASS, self::class);
 
     return $results;
   }
@@ -47,7 +52,7 @@ class Type extends CoreModel {
     $pdoStatement = $pdo->query($sql);
     // petite nouveauté, je peux faire un fetchObject plutot qu'un fetch
     // Pour récuperer mes donn'es sou la forme d'UN objet qui sera instancie a partir de la classe 'Category'
-    $result = $pdoStatement->fetchObject('Type');
+    $result = $pdoStatement->fetchObject(self::class);
     return $result;
   }
   
@@ -62,7 +67,7 @@ class Type extends CoreModel {
       LIMIT 5
     ';
     $pdoStatement = $pdo->query($sql);
-    $results = $pdoStatement->fetchAll(PDO::FETCH_CLASS, 'Type');
+    $results = $pdoStatement->fetchAll(PDO::FETCH_CLASS, self::class);
     return $results;
   }
 
